@@ -86,10 +86,10 @@ distances = compute_distances(langs)
 
 # write results
 CSV.write("../grambank-distances.csv.gz", distances, compress=true)
-CSV.write("../grambank-distances-under5000km.csv.gz", subset(distances, :distance => d -> d .<= 5000), compress=true)
-CSV.write("../grambank-distances-under1000km.csv.gz", subset(distances, :distance => d -> d .<= 1000), compress=true)
-CSV.write("../grambank-distances-500closest.csv.gz", subset(distances, :rank => r -> r .<= 500), compress=true)
-CSV.write("../grambank-distances-100closest.csv.gz", subset(distances, :rank => r -> r .<= 100), compress=true)
+CSV.write("../grambank-distances-under5000km.csv", subset(distances, :distance => d -> d .<= 5000), compress=false)
+CSV.write("../grambank-distances-under1000km.csv", subset(distances, :distance => d -> d .<= 1000), compress=false)
+CSV.write("../grambank-distances-500closest.csv", subset(distances, :rank => r -> r .<= 500), compress=false)
+CSV.write("../grambank-distances-100closest.csv", subset(distances, :rank => r -> r .<= 100), compress=false)
 
 
 
